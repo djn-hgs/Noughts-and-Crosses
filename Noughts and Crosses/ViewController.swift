@@ -6,15 +6,22 @@
 //  Copyright © 2019 Daryl Noyce (School). All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
-class ViewController: UIViewController {
+func viewDidLoad() {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    let scene = SKScene(size: view.bounds.size)
+
+    scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    
+    let image = SKSpriteNode(imageNamed: "myImage.png")
+    
+    scene.addChild(image)
+    
+    if let skView = self.view as? SKView {
+        skView.presentScene(scene)
     }
 
-
 }
+
 
